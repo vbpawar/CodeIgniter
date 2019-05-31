@@ -1,17 +1,14 @@
-<!-- <div class="jumbotron">
-  <h1 class="display-3"><?=$title?></h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
-</div> -->
-<h3>
-<?=$title?></h3>
-<?php foreach($posts as $post) : ?>
-<h3><?php echo $post['title'];?></h3>
-<small class="post_date">Posted on: <?php echo $post['created_at'];?></small><br>
-<?php echo word_limiter($post['body'],40);?><br><br>
-<p><a href="<?php echo site_url('/posts/'.$post['slug']);?>">Read More</a></p>
-<?php endforeach ;?>
+<h3><?= $title ?></h3>
+<?php foreach ($posts as $post) : ?>
+  <h3><?php echo $post['title']; ?></h3>
+  <div class="row">
+    <div class="col-md-3">
+      <img class="post_thumb" src="http://localhost/Code/assets/images/posts/<?php echo $post['post_image']; ?>"/>
+    </div>
+    <div class="col-md-9">
+      <small class="post_date">Posted on: <?php echo $post['created_at']; ?>In <strong><?php echo $post['name']; ?></strong></small><br>
+      <?php echo word_limiter($post['body'], 40); ?><br><br>
+      <p><a href="<?php echo site_url('/posts/' . $post['slug']); ?>">Read More</a></p>
+    </div>
+  </div>
+<?php endforeach; ?>

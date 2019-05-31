@@ -2,6 +2,7 @@
     <?php echo $post['title'];?>
 </h2>
 <small class="post_date">Posted on: <?php echo $post['created_at'];?></small><br>
+<img  src="http://localhost/Code/assets/images/posts/<?php echo $post['post_image']; ?>"/>
 <div class="post-body">
 <?php echo $post['body'];?>
 </div>
