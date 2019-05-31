@@ -2,6 +2,7 @@
 <head>
     <title>CI Blogs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
     <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
     </head>
