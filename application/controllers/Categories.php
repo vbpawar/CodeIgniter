@@ -9,6 +9,9 @@ class Categories extends CI_Controller{
         $this->load->view('templates/footer');
     }
     public function create(){
+        if(!$this->session->userdata('logged_in')){
+            redirect('users/login');
+        }
         $data['title'] = 'Create Category';
         $this->form_validation->set_rules('name','Name','required');
         if($this->form_validation->run() === FALSE){
@@ -18,6 +21,7 @@ class Categories extends CI_Controller{
         }
         else{
             $this->category_model->create_category();
+            $this->session->set_flashdata('category_created','Category Created');
             redirect('categories');
         }
     }
